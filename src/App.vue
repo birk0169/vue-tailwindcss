@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<the-header></the-header>
+<the-resources></the-resources>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheHeader from './components/layout/TheHeader.vue'
+import TheResources from './components/learning-resources/TheResources.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    TheHeader,
+    TheResources
   }
 }
 </script>
 
 <style>
+
+body{
+  @apply bg-blue-50;
+}
+
+.primary-btn{
+  @apply 
+    bg-blue-100 
+    text-blue-500 
+    rounded-md 
+    p-2
+    hover:bg-blue-400 
+    hover:text-blue-200
+    transition
+    ;
+}
+
 #app {
+  width: 70%;
+  margin: 0 auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  /*color: #2c3e50;*/
   margin-top: 60px;
 }
 </style>
