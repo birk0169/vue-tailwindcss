@@ -3,7 +3,7 @@
     <div class="resource" v-for="res in storedResources" :key="res.id">
         <h3 class="font-bold text-lg">{{res.title}}</h3>
         <p>{{res.description}}</p>
-        <button class="delete-btn"><span>x</span></button>
+        <button @click="deleteResource(res.id)" class="delete-btn"><span>x</span></button>
     </div>
     <div class="add-resource">
         <p class="text-gray-400">Add resource</p>
@@ -28,6 +28,12 @@ export default{
                 }
             ]
         };
+    },
+    methods: {
+        deleteResource(resId){
+            const resIndex = this.storedResources.find(res => res.id === resId);
+            this.storedResources.splice(resIndex, 1);
+        }
     }
 }
 </script>
@@ -71,6 +77,7 @@ export default{
         text-gray-400
         hover:text-gray-600
         hover:border-gray-600 
+        transition
         ;
 }
 </style>
